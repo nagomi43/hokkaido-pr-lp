@@ -422,13 +422,18 @@ h3 {
 .service-visual.movie {
   position: relative;
   overflow: hidden;
+  padding: 16px;
   background: var(--paper);
 }
 
 .service-visual.movie img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: 228px;
+  max-height: 228px;
+  object-fit: contain;
+  border: 3px solid #167ca3;
+  border-radius: 12px;
+  box-shadow: 0 16px 34px rgba(13, 70, 88, 0.12);
 }
 
 .service-visual.character {
