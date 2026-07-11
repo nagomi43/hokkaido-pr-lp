@@ -8,7 +8,7 @@
       name="description"
       content="北海道の地域企業、道の駅、飲食店、農産物、観光施設、イベント向けに、AIアニメPR動画・地域キャラクター・SNSコンテンツを制作します。"
     />
-    <link rel="stylesheet" href="./styles.css?v=conversion-polish" />
+    <link rel="stylesheet" href="./styles.css?v=exhibition-v2" />
   </head>
   <body>
     <header class="site-header">
@@ -316,10 +316,36 @@
           <h2>地域の魅力を一緒に整理しながら制作します。</h2>
         </div>
         <ol class="flow-list">
-          <li><span>01</span><strong>ヒアリング</strong><p>地域、施設、商品、イベントの魅力やターゲットを整理します。</p></li>
-          <li><span>02</span><strong>企画・キャラ案</strong><p>動画構成、案内役キャラ、SNS展開の方向性をご提案します。</p></li>
-          <li><span>03</span><strong>制作</strong><p>AIアニメ、4コマ漫画、投稿画像などを目的に合わせて制作します。</p></li>
-          <li><span>04</span><strong>納品</strong><p>SNS、Web、イベント告知、広告配信に使いやすい形式で納品します。</p></li>
+          <li>
+            <span>01</span>
+            <i class="flow-icon" data-lucide="messages-square" aria-hidden="true"></i>
+            <strong>ヒアリング</strong>
+            <p>目的、ターゲット、伝えたい魅力を丁寧に整理します。</p>
+          </li>
+          <li>
+            <span>02</span>
+            <i class="flow-icon" data-lucide="file-pen-line" aria-hidden="true"></i>
+            <strong>企画・ご提案</strong>
+            <p>動画構成、キャラクター、SNS展開の方向性をご提案します。</p>
+          </li>
+          <li>
+            <span>03</span>
+            <i class="flow-icon" data-lucide="clapperboard" aria-hidden="true"></i>
+            <strong>制作</strong>
+            <p>AIアニメ、4コマ漫画、投稿画像を目的に合わせて制作します。</p>
+          </li>
+          <li>
+            <span>04</span>
+            <i class="flow-icon" data-lucide="badge-check" aria-hidden="true"></i>
+            <strong>ご確認・修正</strong>
+            <p>完成前に内容をご確認いただき、必要に応じて調整します。</p>
+          </li>
+          <li>
+            <span>05</span>
+            <i class="flow-icon" data-lucide="send" aria-hidden="true"></i>
+            <strong>納品・活用サポート</strong>
+            <p>SNSやWebで使いやすい形式で納品し、活用もサポートします。</p>
+          </li>
         </ol>
       </section>
 
@@ -417,7 +443,12 @@
     <footer>
       <p>Nagomi AI Studio / Hokkaido Local Brand Character PR</p>
     </footer>
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
     <script>
+      if (window.lucide) {
+        window.lucide.createIcons({ attrs: { "stroke-width": 1.7 } });
+      }
+
       const mobileConsult = document.querySelector(".mobile-consult");
       const hero = document.querySelector(".hero");
 
