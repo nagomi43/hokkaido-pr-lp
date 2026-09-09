@@ -24,7 +24,7 @@
     <meta name="twitter:image:alt" content="北海道の風景とAI PR動画制作のイメージ" />
     <link rel="icon" type="image/webp" href="./assets/su-san-icon.webp" />
     <link rel="preload" as="image" href="./assets/hokkaido-local-pr-hero.webp" />
-    <link rel="stylesheet" href="./styles.css?v=showcase-v40" />
+    <link rel="stylesheet" href="./styles.css?v=showcase-v42" />
     <style id="kintsugi-repair">
 /* ══ 金継ぎ追補スタイル（naoshi planner 自動生成・2026-08-27）══
    元の規則と同じセレクタ・同じmediaで後から上書きする。:root の変数は触らない。
@@ -549,6 +549,11 @@ header.site-header div.site-header-inner a:nth-child(4) { color: #0B4945; }
               </article>
             </div>
           </div>
+
+          <button class="portfolio-more-toggle" type="button" aria-expanded="false" aria-controls="works">
+            <span class="portfolio-more-toggle-label">ほかの作品を見る</span>
+            <span class="portfolio-more-toggle-icon" aria-hidden="true">＋</span>
+          </button>
           <!--
             新しい作品は、該当するグループの portfolio-grid 内に
             data-portfolio-item を付けた article.work-card として追加してください。
@@ -1042,10 +1047,23 @@ header.site-header div.site-header-inner a:nth-child(4) { color: #0B4945; }
       const contact = document.querySelector(".contact");
       const portfolioItems = Array.from(document.querySelectorAll("[data-portfolio-item]"));
       const portfolioCount = document.querySelector("#portfolio-count");
+      const portfolioMoreToggle = document.querySelector(".portfolio-more-toggle");
+      const portfolioMoreLabel = document.querySelector(".portfolio-more-toggle-label");
+      const portfolioMoreIcon = document.querySelector(".portfolio-more-toggle-icon");
 
       if (portfolioCount) {
         const totalWorks = portfolioItems.length + 1;
           portfolioCount.textContent = String(totalWorks).padStart(2, "0") + "作品";
+      }
+
+      if (works && portfolioMoreToggle && portfolioMoreLabel && portfolioMoreIcon) {
+        works.classList.add("portfolio-mobile-ready");
+        portfolioMoreToggle.addEventListener("click", () => {
+          const expanded = works.classList.toggle("is-mobile-expanded");
+          portfolioMoreToggle.setAttribute("aria-expanded", String(expanded));
+          portfolioMoreLabel.textContent = expanded ? "作品をたたむ" : "ほかの作品を見る";
+          portfolioMoreIcon.textContent = expanded ? "−" : "＋";
+        });
       }
 
       if (mobileConsult && hero && contact) {
