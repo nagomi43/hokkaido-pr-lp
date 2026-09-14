@@ -3067,6 +3067,303 @@ html.motion-ready .portfolio-item {
   }
 }
 
+/* 4コマは縦長の全体を見せ、スマホの固定高さで下段を隠さない。 */
+.service-card .service-image.service-image-comic {
+  height: auto;
+  min-height: 0;
+  padding: 16px 20px;
+  place-items: start center;
+}
+
+.service-card .service-image.service-image-comic img {
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  min-height: 0;
+  object-fit: contain;
+}
+
+/* 和文の句読点と長いカタカナ語を、途中で割りにくくする。 */
+body {
+  line-break: strict;
+}
+
+p {
+  line-break: strict;
+  word-break: auto-phrase;
+}
+
+.specialty-source {
+  display: inline-block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  line-break: strict;
+}
+
+@media (max-width: 700px) {
+  .creator-story {
+    padding: 28px 20px;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 440px) {
+  /* 幅390px前後では、デスクトップ用の強制改行が孤立行を作るため自然折返しに戻す。 */
+  .specialty-copy h2 br,
+  .creator-story-heading h3 br {
+    display: none;
+  }
+
+  .specialty-copy h2 {
+    font-size: 30px;
+    line-height: 1.35;
+  }
+
+  .creator-story-heading h3 {
+    font-size: 30px;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 700px) {
+  /* 代表作の下は、隠す一覧ではなく1枚ずつ読める横スクロール列にする。 */
+  .works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid,
+  .works.portfolio-mobile-ready .portfolio-group-contest .portfolio-grid {
+    display: flex;
+    width: calc(100% + 40px);
+    margin-right: -20px;
+    margin-left: -20px;
+    padding: 4px 20px 18px;
+    gap: 14px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-padding-inline: 20px;
+    scroll-snap-type: x mandatory;
+    scrollbar-color: rgba(155, 207, 214, 0.8) rgba(255, 255, 255, 0.08);
+    scrollbar-width: thin;
+  }
+
+  .works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid::-webkit-scrollbar,
+  .works.portfolio-mobile-ready .portfolio-group-contest .portfolio-grid::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid::-webkit-scrollbar-track,
+  .works.portfolio-mobile-ready .portfolio-group-contest .portfolio-grid::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid::-webkit-scrollbar-thumb,
+  .works.portfolio-mobile-ready .portfolio-group-contest .portfolio-grid::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: rgba(155, 207, 214, 0.8);
+  }
+
+  .works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid > .portfolio-item,
+  .works.portfolio-mobile-ready .portfolio-group-contest .portfolio-grid > .portfolio-item {
+    display: grid;
+    flex: 0 0 min(82vw, 320px);
+    grid-template-columns: 1fr;
+    gap: 0;
+    min-height: 0;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 18px;
+    background: #0e3e3b;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  .works.portfolio-mobile-ready .portfolio-group-contest .portfolio-grid > .portfolio-item:nth-child(n + 2) {
+    display: grid;
+  }
+
+  .works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid > .portfolio-item .video-poster,
+  .works.portfolio-mobile-ready .portfolio-group-contest .portfolio-grid > .portfolio-item .video-poster,
+  .works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid > .portfolio-item .video-poster.portrait.compact {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    align-self: stretch;
+    justify-self: stretch;
+    margin: 0;
+  }
+
+  .works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid > .portfolio-item .work-card-copy,
+  .works.portfolio-mobile-ready .portfolio-group-contest .portfolio-grid > .portfolio-item .work-card-copy {
+    padding: 16px 16px 18px;
+  }
+
+  .works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid > .portfolio-item .work-card-copy h3,
+  .works.portfolio-mobile-ready .portfolio-group-contest .portfolio-grid > .portfolio-item .work-card-copy h3 {
+    margin-bottom: 8px;
+    font-size: 23px;
+    line-height: 1.35;
+  }
+
+  .works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid > .portfolio-item .work-card-copy > p:not(.work-label),
+  .works.portfolio-mobile-ready .portfolio-group-contest .portfolio-grid > .portfolio-item .work-card-copy > p:not(.work-label) {
+    display: -webkit-box;
+    max-width: none;
+    margin-bottom: 0;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-height: 1.7;
+  }
+
+  /* 横列で全作品を見せるため、従来の「ほかの作品を見る」は重複させない。 */
+  .works.portfolio-mobile-ready .portfolio-more-toggle {
+    display: none;
+  }
+
+  .works.portfolio-mobile-ready .portfolio-group-heading::after {
+    display: block;
+    margin-top: 10px;
+    color: #9bcfd6;
+    content: "横にスワイプ →";
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+  }
+}
+
+/* PC・タブレットも作品を同じカードで見せる横カルーセル。 */
+.works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid,
+.works.portfolio-mobile-ready .portfolio-group-contest .portfolio-grid {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  margin-top: 0;
+  padding: 4px 0 18px;
+  gap: 18px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-padding-inline: 0;
+  scroll-snap-type: x mandatory;
+  scrollbar-color: rgba(155, 207, 214, 0.8) rgba(255, 255, 255, 0.08);
+  scrollbar-width: thin;
+}
+
+.works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid::-webkit-scrollbar,
+.works.portfolio-mobile-ready .portfolio-group-contest .portfolio-grid::-webkit-scrollbar {
+  height: 7px;
+}
+
+.works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid::-webkit-scrollbar-track,
+.works.portfolio-mobile-ready .portfolio-group-contest .portfolio-grid::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid::-webkit-scrollbar-thumb,
+.works.portfolio-mobile-ready .portfolio-group-contest .portfolio-grid::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(155, 207, 214, 0.8);
+}
+
+.works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid > .portfolio-item:nth-child(n + 1),
+.works.portfolio-mobile-ready .portfolio-group-contest .portfolio-grid > .portfolio-item:nth-child(n + 1) {
+  display: flex;
+  flex: 0 0 calc((100% - 36px) / 3);
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 18px;
+  background: #0e3e3b;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid > .portfolio-item:first-child {
+  border-color: rgba(223, 115, 95, 0.72);
+}
+
+.works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid > .portfolio-item > .video-poster,
+.works.portfolio-mobile-ready .portfolio-group-contest .portfolio-grid > .portfolio-item > .video-poster {
+  width: 100%;
+  max-width: none;
+  aspect-ratio: 4 / 3;
+  align-self: stretch;
+  justify-self: stretch;
+  margin: 0;
+}
+
+.works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid > .portfolio-item > .work-card-copy,
+.works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid > .portfolio-item > .featured-work-copy,
+.works.portfolio-mobile-ready .portfolio-group-contest .portfolio-grid > .portfolio-item > .work-card-copy {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  max-width: none;
+  flex-direction: column;
+  padding: 20px 20px 22px;
+}
+
+.works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid > .portfolio-item h3,
+.works.portfolio-mobile-ready .portfolio-group-contest .portfolio-grid > .portfolio-item h3 {
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: clamp(24px, 2.4vw, 30px);
+  line-height: 1.35;
+}
+
+.works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid > .portfolio-item > .work-card-copy > p:not(.work-label),
+.works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid > .portfolio-item > .featured-work-copy > p:not(.work-label),
+.works.portfolio-mobile-ready .portfolio-group-contest .portfolio-grid > .portfolio-item > .work-card-copy > p:not(.work-label) {
+  display: -webkit-box;
+  max-width: none;
+  margin-bottom: 0;
+  overflow: hidden;
+  color: #c8d9d6;
+  font-size: 14px;
+  line-height: 1.75;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid > .portfolio-item > .featured-work-copy .work-tags {
+  margin-top: 18px;
+}
+
+.works.portfolio-mobile-ready .portfolio-more-toggle {
+  display: none;
+}
+
+@media (max-width: 860px) and (min-width: 701px) {
+  .works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid > .portfolio-item:nth-child(n + 1),
+  .works.portfolio-mobile-ready .portfolio-group-contest .portfolio-grid > .portfolio-item:nth-child(n + 1) {
+    flex-basis: calc((100% - 18px) / 2);
+  }
+}
+
+@media (max-width: 700px) {
+  .works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid,
+  .works.portfolio-mobile-ready .portfolio-group-contest .portfolio-grid {
+    width: calc(100% + 40px);
+    margin-right: -20px;
+    margin-left: -20px;
+    padding: 4px 20px 18px;
+    gap: 14px;
+  }
+
+  .works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid > .portfolio-item:nth-child(n + 1),
+  .works.portfolio-mobile-ready .portfolio-group-contest .portfolio-grid > .portfolio-item:nth-child(n + 1) {
+    flex-basis: min(82vw, 320px);
+  }
+
+  .works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid > .portfolio-item > .work-card-copy,
+  .works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid > .portfolio-item > .featured-work-copy,
+  .works.portfolio-mobile-ready .portfolio-group-contest .portfolio-grid > .portfolio-item > .work-card-copy {
+    padding: 16px 16px 18px;
+  }
+
+  .works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid > .portfolio-item h3,
+  .works.portfolio-mobile-ready .portfolio-group-contest .portfolio-grid > .portfolio-item h3 {
+    font-size: 23px;
+  }
+}
+
 /* 3:4の紹介動画を切り抜かずに表示する。元のヒーロー画像用枠は維持する。 */
 .hero-visual.hero-visual-video {
   display: grid;
@@ -3122,5 +3419,88 @@ html.motion-ready .portfolio-item {
 
   .hero-visual.hero-visual-video figcaption strong {
     font-size: 13px;
+  }
+}
+
+.portfolio-carousel {
+  min-width: 0;
+}
+
+.portfolio-carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 2px;
+}
+
+.portfolio-carousel-button {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  place-items: center;
+  border: 1px solid rgba(155, 207, 214, 0.68);
+  border-radius: 50%;
+  background: transparent;
+  color: #d4e1de;
+  cursor: pointer;
+  font: inherit;
+  font-size: 22px;
+  line-height: 1;
+  transition: background 180ms ease, border-color 180ms ease, color 180ms ease, opacity 180ms ease, transform 180ms ease;
+}
+
+.portfolio-carousel-button:hover:not(:disabled),
+.portfolio-carousel-button:focus-visible {
+  border-color: var(--coral);
+  background: var(--coral);
+  color: var(--forest-dark);
+  transform: translateY(-1px);
+}
+
+.portfolio-carousel-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.32;
+}
+
+.portfolio-carousel-status {
+  min-width: 58px;
+  color: #9bcfd6;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+[data-carousel-rail] {
+  cursor: grab;
+}
+
+[data-carousel-rail] img {
+  -webkit-user-drag: none;
+}
+
+[data-carousel-rail].is-dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
+@media (max-width: 700px) {
+  .portfolio-carousel-controls {
+    justify-content: space-between;
+    padding: 0 2px;
+  }
+
+  .portfolio-carousel-button {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .portfolio-carousel-status {
+    font-size: 11px;
   }
 }
