@@ -24,7 +24,7 @@
     <meta name="twitter:image:alt" content="北海道の風景とAI PR動画制作のイメージ" />
     <link rel="icon" type="image/webp" href="./assets/su-san-icon.webp" />
     <link rel="preload" as="image" href="./assets/hokkaido-local-pr-hero.webp" />
-    <link rel="stylesheet" href="./styles.css?v=showcase-v42" />
+    <link rel="stylesheet" href="./styles.css?v=showcase-v44" />
     <style id="kintsugi-repair">
 /* ══ 金継ぎ追補スタイル（naoshi planner 自動生成・2026-08-27）══
    元の規則と同じセレクタ・同じmediaで後から上書きする。:root の変数は触らない。
@@ -382,21 +382,33 @@ header.site-header div.site-header-inner a:nth-child(4) { color: #0B4945; }
               <a class="button secondary" href="#works">代表作品を見る</a>
             </div>
             <ul class="hero-proof" aria-label="制作実績と対応範囲">
-              <li><strong>13件</strong><span>受賞・入賞</span></li>
+              <li><strong>14件</strong><span>受賞・入賞</span></li>
               <li><strong>15 / 30 / 60秒</strong><span>短尺動画に対応</span></li>
               <li><strong>北海道在住</strong><span>企画から納品まで</span></li>
             </ul>
           </div>
 
-          <figure class="hero-visual">
-            <img
-              src="./assets/hokkaido-local-pr-hero.webp"
-              alt="北海道の風景、地域案内キャラクター、映像制作の様子を組み合わせたAI PR制作イメージ"
-              width="1920"
-              height="1080"
-              fetchpriority="high"
-              decoding="async"
-            />
+          <figure class="hero-visual hero-visual-video">
+            <video
+              class="hero-video"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              poster="./assets/ai-pr-intro-15s-poster.jpg"
+              width="480"
+              height="640"
+              aria-label="AI PR動画制作サービスの紹介動画"
+            >
+              <source src="./assets/ai-pr-intro-15s.mp4" type="video/mp4" />
+              <img
+                src="./assets/ai-pr-intro-15s-poster.jpg"
+                alt="AI PR動画制作サービスの紹介動画"
+                width="480"
+                height="640"
+              />
+            </video>
             <figcaption>
               <span>北海道を拠点に / AI PR動画</span>
               <strong>北海道から、地域の物語を世界へ。</strong>
@@ -693,7 +705,7 @@ header.site-header div.site-header-inner a:nth-child(4) { color: #0B4945; }
             </div>
             <ul class="specialty-proof" aria-label="北海道を拠点にした専門性">
               <li><strong>北海道在住</strong><span>地域の温度感を企画へ</span></li>
-              <li><strong>13件</strong><span>受賞・入賞実績</span></li>
+              <li><strong>14件</strong><span>受賞・入賞実績</span></li>
               <li><strong>地域・観光・飲食・宿泊</strong><span>作品で用途を確認できます</span></li>
             </ul>
           </div>
@@ -764,14 +776,15 @@ header.site-header div.site-header-inner a:nth-child(4) { color: #0B4945; }
             <div class="profile-awards-heading">
               <p class="eyebrow">受賞・入賞</p>
               <h3>受賞・入賞実績</h3>
-              <p>AI動画・実務デザインのコンテストで、これまでに13件の受賞・入賞実績があります。</p>
+              <p>AI動画・実務デザインのコンテストで、これまでに14件の受賞・入賞実績があります。</p>
             </div>
             <div class="award-summary">
               <div class="award-count">
-                <strong>13</strong>
+                <strong>14</strong>
                 <span>受賞・入賞実績</span>
               </div>
               <ul class="selected-awards">
+                <li><time>2026.08</time><span>SousakuAI Super 30s Creation Cup 2026<br /><strong>優秀賞</strong></span></li>
                 <li><time>2026.08</time><span>DomoAI夏のクリエイティブチャレンジ<br /><strong>優秀賞</strong></span></li>
                 <li><time>2026.08</time><span>Renoise Seedance 2.5 One Shot Challenge<br /><strong>入賞</strong></span></li>
                 <li><time>2026.06</time><span>Lovart 実務デザインコンテスト<br /><strong>優秀賞</strong></span></li>
@@ -781,7 +794,7 @@ header.site-header div.site-header-inner a:nth-child(4) { color: #0B4945; }
             <details class="award-details">
               <summary>
                 <span>受賞・入賞実績をすべて見る</span>
-                <small>13件</small>
+                <small>14件</small>
               </summary>
               <ol class="award-history">
                 <li><time>2025.11</time><span>Sozo美術館しらはまコンテスト</span><strong>グランプリ</strong></li>
@@ -796,6 +809,7 @@ header.site-header div.site-header-inner a:nth-child(4) { color: #0B4945; }
                 <li><time>2026.06</time><span>4K AI動画コンテスト</span><strong>最優秀賞</strong></li>
                 <li><time>2026.06</time><span>Lovart 実務デザインコンテスト</span><strong>優秀賞</strong></li>
                 <li><time>2026.08</time><span>DomoAI夏のクリエイティブチャレンジ</span><strong>優秀賞</strong></li>
+                <li><time>2026.08</time><span>SousakuAI Super 30s Creation Cup 2026</span><strong>優秀賞</strong></li>
                 <li><time>2026.08</time><span>Renoise Seedance 2.5 One Shot Challenge</span><strong>入賞</strong></li>
               </ol>
             </details>
@@ -1050,6 +1064,52 @@ header.site-header div.site-header-inner a:nth-child(4) { color: #0B4945; }
       const portfolioMoreToggle = document.querySelector(".portfolio-more-toggle");
       const portfolioMoreLabel = document.querySelector(".portfolio-more-toggle-label");
       const portfolioMoreIcon = document.querySelector(".portfolio-more-toggle-icon");
+      const motionSections = Array.from(document.querySelectorAll("section.section > .section-inner"));
+      const motionPortfolioItems = Array.from(document.querySelectorAll("[data-portfolio-item]"));
+      const motionTargets = [...motionSections, ...motionPortfolioItems];
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const introVideo = document.querySelector(".hero-video");
+
+      if (introVideo && prefersReducedMotion.matches) {
+        introVideo.removeAttribute("autoplay");
+        introVideo.pause();
+      } else if (introVideo && "IntersectionObserver" in window) {
+        const introVideoObserver = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              introVideo.play().catch(() => {});
+            } else {
+              introVideo.pause();
+            }
+          },
+          { threshold: 0.25 },
+        );
+
+        introVideoObserver.observe(introVideo);
+      }
+
+      if (!prefersReducedMotion.matches && "IntersectionObserver" in window && motionTargets.length) {
+        document.documentElement.classList.add("motion-ready");
+
+        document.querySelectorAll(".portfolio-group").forEach((group) => {
+          Array.from(group.querySelectorAll("[data-portfolio-item]")).forEach((item, index) => {
+            item.style.setProperty("--motion-delay", `${Math.min(index, 3) * 70}ms`);
+          });
+        });
+
+        const motionObserver = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add("is-motion-visible");
+              observer.unobserve(entry.target);
+            });
+          },
+          { rootMargin: "0px 0px -10% 0px", threshold: 0.05 },
+        );
+
+        motionTargets.forEach((target) => motionObserver.observe(target));
+      }
 
       if (portfolioCount) {
         const totalWorks = portfolioItems.length + 1;
@@ -1063,6 +1123,14 @@ header.site-header div.site-header-inner a:nth-child(4) { color: #0B4945; }
           portfolioMoreToggle.setAttribute("aria-expanded", String(expanded));
           portfolioMoreLabel.textContent = expanded ? "作品をたたむ" : "ほかの作品を見る";
           portfolioMoreIcon.textContent = expanded ? "−" : "＋";
+
+          if (expanded && document.documentElement.classList.contains("motion-ready")) {
+            portfolioItems.forEach((item) => {
+              if (getComputedStyle(item).display !== "none") {
+                item.classList.add("is-motion-visible");
+              }
+            });
+          }
         });
       }
 
