@@ -3805,3 +3805,9 @@ html.video-modal-open {
 .contact-dm a:focus-visible {
   color: #a9d7dc;
 }
+
+.offer-condition .offer-price small {
+  margin-left: 4px;
+  font-size: 13px;
+  font-weight: 700;
+}
