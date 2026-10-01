@@ -328,7 +328,7 @@ nav a:not(.nav-cta):hover::after {
 
 .hero-audience span {
   color: var(--coral-dark);
-  font-family: Georgia, serif;
+  font-family: "Noto Serif JP", Georgia, serif;
   font-size: 10px;
   letter-spacing: 0.12em;
 }
@@ -540,7 +540,7 @@ nav a:not(.nav-cta):hover::after {
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 999px;
   color: #a9d7dc;
-  font-family: Georgia, serif;
+  font-family: "Noto Serif JP", Georgia, serif;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -904,7 +904,7 @@ nav a:not(.nav-cta):hover::after {
   display: block;
   margin-bottom: 12px;
   color: var(--coral);
-  font-family: Georgia, serif;
+  font-family: "Noto Serif JP", Georgia, serif;
   font-size: 16px;
   font-weight: 700;
 }
@@ -947,7 +947,7 @@ nav a:not(.nav-cta):hover::after {
   display: block;
   margin-bottom: 20px;
   color: var(--coral);
-  font-family: Georgia, serif;
+  font-family: "Noto Serif JP", Georgia, serif;
   font-size: 13px;
   font-weight: 700;
 }
@@ -987,7 +987,7 @@ nav a:not(.nav-cta):hover::after {
 .value-strip span {
   margin-bottom: 8px;
   color: var(--lake);
-  font-family: Georgia, serif;
+  font-family: "Noto Serif JP", Georgia, serif;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -1253,7 +1253,7 @@ nav a:not(.nav-cta):hover::after {
 .creator-values span {
   margin-bottom: 10px;
   color: var(--coral);
-  font-family: Georgia, serif;
+  font-family: "Noto Serif JP", Georgia, serif;
   font-size: 12px;
   font-weight: 700;
 }
@@ -1375,7 +1375,7 @@ nav a:not(.nav-cta):hover::after {
 }
 
 .award-count strong {
-  font-family: Georgia, serif;
+  font-family: "Noto Serif JP", Georgia, serif;
   font-size: 76px;
   font-weight: 400;
   letter-spacing: -0.05em;
@@ -1412,7 +1412,7 @@ nav a:not(.nav-cta):hover::after {
 .selected-awards time {
   margin-bottom: 14px;
   color: var(--coral);
-  font-family: Georgia, serif;
+  font-family: "Noto Serif JP", Georgia, serif;
   font-size: 13px;
   font-weight: 700;
 }
@@ -1455,7 +1455,7 @@ nav a:not(.nav-cta):hover::after {
 .award-details summary::after {
   color: var(--lake);
   content: "+";
-  font-family: Georgia, serif;
+  font-family: "Noto Serif JP", Georgia, serif;
   font-size: 24px;
   font-weight: 400;
 }
@@ -1467,7 +1467,7 @@ nav a:not(.nav-cta):hover::after {
 .award-details summary small {
   margin-left: auto;
   color: var(--lake);
-  font-family: Georgia, serif;
+  font-family: "Noto Serif JP", Georgia, serif;
   font-size: 10px;
   letter-spacing: 0.08em;
 }
@@ -1500,7 +1500,7 @@ nav a:not(.nav-cta):hover::after {
 
 .award-history time {
   color: var(--coral-dark);
-  font-family: Georgia, serif;
+  font-family: "Noto Serif JP", Georgia, serif;
   font-size: 11px;
   font-weight: 700;
 }
@@ -1535,7 +1535,7 @@ nav a:not(.nav-cta):hover::after {
 
 .process-list > li > span {
   color: var(--coral);
-  font-family: Georgia, serif;
+  font-family: "Noto Serif JP", Georgia, serif;
   font-size: 14px;
   font-weight: 700;
 }
@@ -1593,7 +1593,7 @@ nav a:not(.nav-cta):hover::after {
   right: 8px;
   color: var(--lake);
   content: "+";
-  font-family: Georgia, serif;
+  font-family: "Noto Serif JP", Georgia, serif;
   font-size: 28px;
   font-weight: 400;
   transform: translateY(-50%);
@@ -2322,7 +2322,7 @@ footer p {
   left: 0;
   color: #9bcfd6;
   content: counter(portfolio-card, decimal-leading-zero);
-  font-family: Georgia, serif;
+  font-family: "Noto Serif JP", Georgia, serif;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -2436,7 +2436,7 @@ footer p {
 
   .portfolio-more-toggle-icon {
     color: #9bcfd6;
-    font-family: Georgia, serif;
+    font-family: "Noto Serif JP", Georgia, serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 1;
@@ -2588,7 +2588,7 @@ body {
   display: block;
   margin-bottom: 18px;
   color: var(--lake);
-  font-family: Georgia, serif;
+  font-family: "Noto Serif JP", Georgia, serif;
   font-size: 16px;
   font-weight: 700;
 }
@@ -2824,7 +2824,7 @@ body {
   right: 8px;
   color: var(--lake);
   content: "+";
-  font-family: Georgia, serif;
+  font-family: "Noto Serif JP", Georgia, serif;
   font-size: 26px;
   font-weight: 400;
   transform: translateY(-50%);
@@ -3536,6 +3536,16 @@ p {
 
 [data-carousel-rail] a {
   -webkit-user-drag: none;
+}
+
+/* 旧リスト表示の間隔（gap）と通し番号がカルーセルのカードに残っていたので打ち消す。 */
+.works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid > .portfolio-item:nth-child(n + 1),
+.works.portfolio-mobile-ready .portfolio-group-contest .portfolio-grid > .portfolio-item:nth-child(n + 1) {
+  gap: 0;
+}
+
+.works.portfolio-mobile-ready .portfolio-grid .work-card-copy::before {
+  display: none;
 }
 
 .portfolio-carousel.is-static .portfolio-carousel-controls {
