@@ -3777,3 +3777,31 @@ html.video-modal-open {
 .service-genre-list > span {
   white-space: nowrap;
 }
+
+/* 料金の目安とXのDM導線 */
+.offer-condition .offer-price {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--ink);
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1.4;
+}
+
+.contact-inner > .contact-dm {
+  margin-top: 26px;
+  margin-bottom: 0;
+}
+
+.contact-dm a {
+  color: #fff;
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-color: rgba(169, 215, 220, 0.7);
+  text-underline-offset: 4px;
+}
+
+.contact-dm a:hover,
+.contact-dm a:focus-visible {
+  color: #a9d7dc;
+}
