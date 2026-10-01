@@ -3749,3 +3749,31 @@ html.video-modal-open {
     align-items: flex-start;
   }
 }
+
+/* 「できること」の下の対応ジャンル（旧「こんなご相談に」を1行に集約） */
+.service-genres {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 16px;
+  margin: clamp(24px, 3vw, 36px) 0 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.service-genres strong {
+  color: var(--forest);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.about-copy .specialty-source {
+  margin-top: 4px;
+}
+
+.service-genre-list > span {
+  white-space: nowrap;
+}
