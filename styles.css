@@ -3811,3 +3811,11 @@ html.video-modal-open {
   font-size: 13px;
   font-weight: 700;
 }
+
+/* 相談セクションの見出しが長くなったので、スマホでは文字を少し小さくして語の途中で折れないようにする */
+@media (max-width: 440px) {
+  .contact h2 {
+    font-size: clamp(28px, 8.4vw, 36px);
+    line-height: 1.35;
+  }
+}
