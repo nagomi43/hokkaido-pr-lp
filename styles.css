@@ -4004,3 +4004,67 @@ html.video-modal-open {
     height: 200px;
   }
 }
+
+/* ===== スマホ：作品カードを小さくして、PRは2枚＋α、受賞は1枚半が見えるようにする =====
+   旧ルールがグループ名＋.work-card-copy付きの強い指定なので、同じ強さで上書きする。 */
+@media (max-width: 700px) {
+  .works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid,
+  .works.portfolio-mobile-ready .portfolio-group-contest .portfolio-grid {
+    gap: 12px;
+  }
+
+  .works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid > .portfolio-item:nth-child(n + 1) {
+    flex-basis: min(42vw, 200px);
+    border-radius: 14px;
+  }
+
+  .works.portfolio-mobile-ready .portfolio-group-contest .portfolio-grid > .portfolio-item:nth-child(n + 1) {
+    flex-basis: min(70vw, 300px);
+    border-radius: 14px;
+  }
+
+  .works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid > .portfolio-item > .work-card-copy,
+  .works.portfolio-mobile-ready .portfolio-group-contest .portfolio-grid > .portfolio-item > .work-card-copy,
+  .works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid > .portfolio-item > .featured-work-copy {
+    padding: 12px 12px 14px;
+  }
+
+  .works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid > .portfolio-item .work-card-copy .work-label,
+  .works.portfolio-mobile-ready .portfolio-group-contest .portfolio-grid > .portfolio-item .work-card-copy .work-label {
+    margin-bottom: 6px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+  }
+
+  .works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid > .portfolio-item .work-card-copy h3 {
+    margin-bottom: 6px;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .works.portfolio-mobile-ready .portfolio-group-contest .portfolio-grid > .portfolio-item .work-card-copy h3 {
+    margin-bottom: 6px;
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  .works.portfolio-mobile-ready .portfolio-group-pr .portfolio-grid > .portfolio-item .work-card-copy > p:not(.work-label),
+  .works.portfolio-mobile-ready .portfolio-group-contest .portfolio-grid > .portfolio-item .work-card-copy > p:not(.work-label) {
+    font-size: 13px;
+    line-height: 1.65;
+    -webkit-line-clamp: 2;
+  }
+
+  .works.portfolio-mobile-ready .portfolio-grid .video-poster .video-play {
+    width: 46px;
+    height: 46px;
+  }
+
+  .works.portfolio-mobile-ready .portfolio-grid .video-poster .video-play::before {
+    margin-left: 4px;
+    border-top-width: 7px;
+    border-bottom-width: 7px;
+    border-left-width: 11px;
+  }
+}
