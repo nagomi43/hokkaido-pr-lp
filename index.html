@@ -1316,12 +1316,8 @@ header.site-header div.site-header-inner a:nth-child(4) { color: #0B4945; }
         const updateMobileConsult = () => {
           const heroVisible = hero.getBoundingClientRect().bottom > window.innerHeight * 0.22;
           const contactVisible = contact.getBoundingClientRect().top < window.innerHeight * 0.82;
-          const readingInfo = [works, services, about, process, offer, faq].some((section) => {
-            if (!section) return false;
-            const sectionRect = section.getBoundingClientRect();
-            return sectionRect.top < window.innerHeight * 0.86 && sectionRect.bottom > window.innerHeight * 0.14;
-          });
-          mobileConsult.classList.toggle("is-hidden", heroVisible || contactVisible || readingInfo);
+          // ヒーローと最後の相談欄が見えている間だけ隠し、それ以外は常に表示する
+          mobileConsult.classList.toggle("is-hidden", heroVisible || contactVisible);
         };
 
         updateMobileConsult();
