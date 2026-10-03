@@ -4068,3 +4068,209 @@ html.video-modal-open {
     border-left-width: 11px;
   }
 }
+
+/* ===== 2026-10-03 ヒーロー見出し・実績・受賞帯・料金表示の整理・スマホ相談ボタン ===== */
+/* ヒーローの実績数字を読める大きさに */
+.hero-proof strong {
+  margin-bottom: 2px;
+  font-family: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", Georgia, serif;
+  font-size: clamp(22px, 2.2vw, 28px);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 700px) {
+  .hero h1 {
+    font-size: clamp(34px, 9vw, 50px);
+  }
+
+  .hero-proof strong {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 440px) {
+  .hero h1 {
+    font-size: clamp(30px, 9vw, 36px);
+  }
+
+  .hero-proof strong {
+    font-size: 17px;
+  }
+}
+
+/* ヒーロー直下の受賞帯 */
+.award-band {
+  background: var(--forest-dark);
+  color: #d4e1de;
+}
+
+.award-band-inner {
+  display: flex;
+  width: min(var(--container), calc(100% - 48px));
+  min-height: 84px;
+  margin: 0 auto;
+  padding: 14px 0;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 28px;
+}
+
+.award-band-inner p {
+  margin: 0;
+}
+
+.award-band-count {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.award-band-count span {
+  color: #9bcfd6;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.award-band-count strong {
+  color: #fff;
+  font-family: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", Georgia, serif;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.award-band-count small {
+  margin-left: 2px;
+  font-size: 16px;
+}
+
+.award-band-detail,
+.award-band-judge {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.award-band-detail {
+  color: #fff;
+}
+
+.award-band-judge {
+  padding-left: 28px;
+  border-left: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+.award-band-link {
+  display: inline-flex;
+  min-height: 44px;
+  margin-left: auto;
+  align-items: center;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 900;
+  text-decoration: underline;
+  text-decoration-color: rgba(155, 207, 214, 0.7);
+  text-underline-offset: 5px;
+}
+
+.award-band-link:hover,
+.award-band-link:focus-visible {
+  color: #9bcfd6;
+}
+
+.profile-awards {
+  scroll-margin-top: 96px;
+}
+
+@media (max-width: 860px) {
+  .award-band-judge {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .award-band-link {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .award-band-inner {
+    width: calc(100% - 40px);
+    padding: 18px 0 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .award-band-count strong {
+    font-size: 30px;
+  }
+
+  .award-band-detail,
+  .award-band-judge {
+    font-size: 14px;
+  }
+
+  .award-band-judge {
+    color: #c8d9d6;
+  }
+}
+
+/* できること：価格の代わりに「料金を見る」 */
+.svc-main-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+  margin: 0;
+}
+
+/* スマホ下部の相談ボタン：フォーム直行＋XのDM */
+@media (max-width: 700px) {
+  .mobile-consult {
+    display: flex;
+    min-height: 0;
+    padding: 0;
+    gap: 10px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .mobile-consult a {
+    display: inline-flex;
+    min-height: 52px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #fff;
+    border-radius: 999px;
+    box-shadow: 0 14px 32px rgba(8, 47, 45, 0.28);
+    font-size: 14px;
+    font-weight: 900;
+  }
+
+  .mobile-consult-form {
+    flex: 1;
+    background: var(--forest);
+    color: #fff;
+  }
+
+  .mobile-consult-dm {
+    flex: 0 0 auto;
+    gap: 6px;
+    padding: 0 18px;
+    background: var(--paper);
+    border-color: var(--forest) !important;
+    color: var(--forest);
+  }
+}
+
+@media (max-width: 700px) {
+  /* 受賞帯の直後に作品見出しが詰まらないように */
+  .award-band + .works.section {
+    padding-top: 56px;
+  }
+}
